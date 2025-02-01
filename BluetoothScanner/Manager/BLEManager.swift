@@ -10,9 +10,9 @@ import CoreBluetooth
 class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     var centralManager: CBCentralManager!
     
-    @Published var discoveredDevices: [BluetoothDevice] = []
-    @Published var connectedPeripheral: CBPeripheral?
-    @Published var isConnected = false
+    var discoveredDevices: [BluetoothDevice] = []
+    var connectedPeripheral: CBPeripheral?
+    var isConnected = false
 
     override init() {
         super.init()
