@@ -80,7 +80,7 @@ extension BLEView {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BluetoothDeviceCell
-        cell.configure(with: devices[indexPath.row].name, device: devices[indexPath.row])
+        cell.configure(with: devices[indexPath.row])
         return cell
     }
 }
@@ -116,8 +116,8 @@ class BluetoothDeviceCell: UITableViewCell {
         ])
     }
     
-    func configure(with text: String, device: BluetoothDevice) {
-        titleLabel.text = text
+    func configure(with device: BluetoothDevice) {
+        titleLabel.text = device.name
         self.device = device
     }
 }
